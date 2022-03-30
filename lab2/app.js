@@ -5,10 +5,11 @@ document.querySelector("ul").addEventListener("click", handleClickOrDelete);
 
 let toDelete;
 let toRestore;
+let searchInput = document.getElementById("search-input");
 
 function handleSubmitForm(e) {
   e.preventDefault();
-  let input = document.querySelector("input");
+  let input = document.querySelector(".add-input");
   if (input.value !== "") {
     addTodo(input.value);
   }
@@ -24,7 +25,7 @@ function handleClickOrDelete(e) {
   }
 }
 
-function getDateString() {
+const getDateString = () => {
   var myDate = new Date();
   return (
     myDate.getDate() +
@@ -38,7 +39,7 @@ function getDateString() {
     ":" +
     myDate.getMinutes()
   );
-}
+};
 
 function addTodo(todo) {
   let ul = document.querySelector("ul");
@@ -52,6 +53,8 @@ function addTodo(todo) {
 
   li.classList.add("todo-list-item");
   ul.append(li);
+
+  return;
 }
 
 function clickTodo(e) {
@@ -78,6 +81,7 @@ function deleteTodo(e) {
 $(".yes-button").on("click", function () {
   toDelete.remove();
   $(".modal").hide();
+  $(".restore-button").show();
 });
 
 $(".no-button").on("click", function () {
@@ -86,4 +90,11 @@ $(".no-button").on("click", function () {
 
 $(".restore-button").on("click", function () {
   addTodo(toRestore);
+  $(this).hide();
 });
+
+/*const searchList = () => {
+  
+};
+
+document.querySelector(".search").addEventListener("keyup", searchList); */

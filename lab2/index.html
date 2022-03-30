@@ -10,16 +10,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class ="container">
-    <header>
-        <h1 class = "headline">ToDoDoDo</h1>
+    <header class = "logo">
+        <img class = "logo" src="images/logo.png" alt = "ToDoDuDu">
     </header>
 
     <div id = "todo-urgent" class = "collapsible-list">
     
-        <h2>Urgent</h2>
+        <h2 class = "list-title">Your ToDo list</h2>
+        <!--<input class = "search" type = "text" id="search-input" placeholder = "Search...">
+        <input type = "checkbox" id = "case">
+        <label for = "case"> Case sensitive </label> -->
         <form>
-            <input type="text" placeholder= "Add a task...">
-            <button class = "add" type="submit" id="add">+</button>
+            <input type="text" class = "add-input" placeholder= "Add a task...">
+            <button class = "add" type="submit" id="submit">+</button>
         </form>
 
         <div class ="list">
@@ -31,10 +34,9 @@
         </div>
     </div>
 
-    
 
     <div class ="modal">
-        <h2>Are you sure you want to delete this task?</h2>
+        <h2 class = "modal-text">Are you sure you want to delete this task?</h2>
         <button class = "yes-button">Yes</button>
         <button class = "no-button">Cancel</button>
 
