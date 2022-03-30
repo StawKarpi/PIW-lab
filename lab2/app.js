@@ -4,6 +4,7 @@ document.querySelector("form").addEventListener("submit", handleSubmitForm);
 document.querySelector("ul").addEventListener("click", handleClickOrDelete);
 
 let toDelete;
+let toRestore;
 
 function handleSubmitForm(e) {
   e.preventDefault();
@@ -70,7 +71,7 @@ function clickTodo(e) {
 
 function deleteTodo(e) {
   toDelete = $(e.target.parentNode);
-  console.log($(e.target.parentNode).text());
+  toRestore = $(toDelete.find("span")).text();
   $(".modal").show();
 }
 
@@ -83,6 +84,6 @@ $(".no-button").on("click", function () {
   $(".modal").hide();
 });
 
-/*$(".restore-button").on("click", function () {
-  addTodo(toDelete.text());
-});*/
+$(".restore-button").on("click", function () {
+  addTodo(toRestore);
+});
