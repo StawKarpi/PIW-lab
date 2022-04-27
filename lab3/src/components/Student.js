@@ -9,7 +9,6 @@ const Student = (props) => {
   const { name, description, tags, subject } = props.data;
 
   return (
-    //<div>{name}</div>
     <Card>
       <CardContent>
         <Typography variant="h5" component="div">
@@ -26,9 +25,6 @@ const Student = (props) => {
         <Box>
           <span>Tagi: </span>
           {tags.map((key, id) => (
-            // <Button variant="text" size="small" key={id}>
-            //   {key}
-            // </Button>
             <span
               style={{
                 background: "pink",

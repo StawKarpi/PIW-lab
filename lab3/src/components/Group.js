@@ -12,7 +12,6 @@ export default class Group extends React.Component {
   render() {
     const { name, members, description, tags, subject } = this.props.data;
     return (
-      //<div>{name}</div>
       <Card>
         <CardContent>
           <Typography variant="h5" component="div">
@@ -50,4 +49,3 @@ export default class Group extends React.Component {
     );
   }
 }
-// export default Group;

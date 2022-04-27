@@ -45,7 +45,6 @@ const AddGroupPage = () => {
       tags: tags,
     };
 
-    // setStudentsData([...studentsData, newStudent]);
     data.push(newGroup);
     localStorage.setItem("groups", JSON.stringify(data));
   };

@@ -39,7 +39,6 @@ const AddStudentPage = () => {
       tags: tags,
     };
 
-    // setStudentsData([...studentsData, newStudent]);
     data.push(newStudent);
     localStorage.setItem("students", JSON.stringify(data));
   };

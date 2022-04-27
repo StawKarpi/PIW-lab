@@ -17,5 +17,3 @@ export default class GroupPage extends React.Component {
     );
   }
 }
-
-// export default GroupPage;

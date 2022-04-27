@@ -12,12 +12,7 @@ const StudentsPage = () => {
     setSearchOption(e.target.value);
   };
 
-  //   console.log(studata);
-  console.log(data);
-
   const [searchTerm, setSearchTerm] = useState("");
-
-  //   props.setStudentsData([StudentsData]);
 
   const searchData = () => {
     if (searchOption === "desc") {
