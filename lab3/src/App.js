@@ -45,9 +45,6 @@ const GroupData = [
 ];
 
 function App() {
-  //const [studentsData, setStudentsData] = useState(StudentsData);
-  // localStorage.setItem("students", JSON.stringify(StudentsData));
-  // let data = localStorage.getItem("students");
 
   if (localStorage.getItem("students")) {
   } else {
