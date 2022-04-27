@@ -28,7 +28,7 @@ const StudentsData = [
 
 const GroupData = [
   {
-    name: "Grupa-Dupa",
+    name: "Delta Szwadron Super Cool Komando Wilków Alfa",
     members: ["Robert Lewandowski", "Adam Małysz", "Robert Kubica"],
     description:
       "Szukamy czwartej osoby do projektu zespołowego. Apka mobilna. Więcej na priv.",
@@ -36,7 +36,7 @@ const GroupData = [
     subject: "Projekt zespołowy",
   },
   {
-    name: "Dupa-Grupa",
+    name: "Nazwa grupy",
     members: ["Robert Makłowicz"],
     description: "Cześć.",
     tags: ["tag", "czesc", ":)"],
@@ -45,10 +45,6 @@ const GroupData = [
 ];
 
 function App() {
-  //const [studentsData, setStudentsData] = useState(StudentsData);
-  // localStorage.setItem("students", JSON.stringify(StudentsData));
-  // let data = localStorage.getItem("students");
-
   if (localStorage.getItem("students")) {
   } else {
     localStorage.setItem("students", JSON.stringify(StudentsData));
@@ -64,7 +60,6 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* </Routes><Route path="/" element={<>} /> */}
           <Route path="/" element={<StudentsPage />} />
           <Route path="/addStudent" element={<AddStudentPage />} />
           <Route path="/groups" element={<GroupPage />} />

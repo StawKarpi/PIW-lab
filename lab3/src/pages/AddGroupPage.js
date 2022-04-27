@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
+// import input from "@mui/material/input";
+import "./AddPage.css";
 
 const AddGroupPage = () => {
   const [name, setName] = useState("");
@@ -51,43 +52,29 @@ const AddGroupPage = () => {
 
   return (
     <div>
-      <TextField
-        label={"Nazwa grupy"}
-        variant="outlined"
-        className="addTextField"
-        onChange={setNameHandler}
-      />
-      <TextField
+      <label class="addLabel">Nazwa grupy:</label>
+      <input label={"Nazwa grupy"} class="addInput" onChange={setNameHandler} />
+      <label class="addLabel">Członkowie:</label>
+      <input
         label={"Członkowie"}
-        variant="outlined"
-        className="addTextField"
+        class="addInput"
         onChange={setMembersHandler}
       />
-      <TextField
-        label={"E-mail"}
-        variant="outlined"
-        className="addTextField"
-        onChange={setEmailsHandler}
-      />
-      <TextField
-        label={"Opis"}
-        variant="outlined"
-        className="addTextField"
-        onChange={setDescriptionHandler}
-      />
-      <TextField
+      <label class="addLabel">E-mail:</label>
+      <input label={"E-mail"} class="addInput" onChange={setEmailsHandler} />
+      <label class="addLabel">Opis:</label>
+      <input label={"Opis"} class="addInput" onChange={setDescriptionHandler} />
+      <label class="addLabel">Przedmiot:</label>
+      <input
         label={"Przedmiot"}
-        variant="outlined"
-        className="addTextField"
+        class="addInput"
         onChange={setSubjectHandler}
       />
-      <TextField
-        label={"Tagi"}
-        variant="outlined"
-        className="addTextField"
-        onChange={setTagsHandler}
-      />
-      <button onClick={addNewGroup}>Dodaj</button>
+      <label class="addLabel">Tagi (po przecinku):</label>
+      <input label={"Tagi"} class="addInput" onChange={setTagsHandler} />
+      <button class="addButton" onClick={addNewGroup}>
+        Dodaj
+      </button>
     </div>
   );
 };

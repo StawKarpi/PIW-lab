@@ -12,7 +12,7 @@ const StudentsPage = () => {
     setSearchOption(e.target.value);
   };
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   const searchData = () => {
     if (searchOption === "desc") {
@@ -26,10 +26,10 @@ const StudentsPage = () => {
 
   const searchDataDescription = () => {
     return data.filter((val) => {
-      if (searchTerm === "") {
+      if (searchValue === "") {
         return val;
       } else if (
-        val.description.toLowerCase().includes(searchTerm.toLowerCase())
+        val.description.toLowerCase().includes(searchValue.toLowerCase())
       ) {
         return val;
       }
@@ -38,9 +38,11 @@ const StudentsPage = () => {
 
   const searchDataSubject = () => {
     return data.filter((val) => {
-      if (searchTerm === "") {
+      if (searchValue === "") {
         return val;
-      } else if (val.subject.toLowerCase().includes(searchTerm.toLowerCase())) {
+      } else if (
+        val.subject.toLowerCase().includes(searchValue.toLowerCase())
+      ) {
         return val;
       }
     });
@@ -48,11 +50,11 @@ const StudentsPage = () => {
 
   const searchDataTags = () => {
     return data.filter((val) => {
-      if (searchTerm === "") {
+      if (searchValue === "") {
         return val;
       } else if (
         val.tags.some((element) =>
-          element.toLowerCase().includes(searchTerm.toLowerCase())
+          element.toLowerCase().includes(searchValue.toLowerCase())
         )
       ) {
         return val;
@@ -64,14 +66,16 @@ const StudentsPage = () => {
     <div className="AllStudents">
       <div>
         <TextField
+          className="searchField"
           variant="outlined"
           size="small"
           placeholder="Search..."
           onChange={(event) => {
-            setSearchTerm(event.target.value);
+            setSearchValue(event.target.value);
           }}
         />
         <Select
+          className="searchSelect"
           value={searchOption}
           label="Wyszukaj po..."
           onChange={handleChange}

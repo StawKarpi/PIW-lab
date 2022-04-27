@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
+// import input from "@mui/material/input";
+import "./AddPage.css";
 
 const AddStudentPage = () => {
   const [name, setName] = useState("");
@@ -45,37 +46,45 @@ const AddStudentPage = () => {
 
   return (
     <div>
-      <TextField
-        label={"Imię i nazwisko"}
-        variant="outlined"
-        className="addTextField"
+      <label class="addLabel"> Imię: </label>
+      <input
+        placeholder={"Imię"}
+        // variant="outlined"
+        className="addInput"
         onChange={setNameHandler}
       />
-      <TextField
-        label={"E-mail"}
-        variant="outlined"
-        className="addTextField"
+      <label class="addLabel"> E-mail: </label>
+      <input
+        placeholder={"E-mail"}
+        // variant="outlined"
+        className="addInput"
         onChange={setEmailHandler}
       />
-      <TextField
-        label={"Opis"}
-        variant="outlined"
-        className="addTextField"
+      <label class="addLabel"> Opis: </label>
+      <input
+        multiline
+        placeholder={"Opis"}
+        // variant="outlined"
+        className="addInput"
         onChange={setDescriptionHandler}
       />
-      <TextField
-        label={"Przedmiot"}
-        variant="outlined"
-        className="addTextField"
+      <label class="addLabel"> Przedmiot </label>
+      <input
+        placeholder={"Przedmiot"}
+        // variant="outlined"
+        className="addInput"
         onChange={setSubjectHandler}
       />
-      <TextField
-        label={"Tagi"}
-        variant="outlined"
-        className="addTextField"
+      <label class="addLabel"> Tagi (po przecinku): </label>
+      <input
+        placeholder={"Tagi"}
+        // variant="outlined"
+        className="addInput"
         onChange={setTagsHandler}
       />
-      <button onClick={addNewStudent}>Dodaj</button>
+      <button class="addButton" onClick={addNewStudent}>
+        Dodaj
+      </button>
     </div>
   );
 };
