@@ -28,7 +28,7 @@ const StudentsData = [
 
 const GroupData = [
   {
-    name: "Grupa-Dupa",
+    name: "Delta Szwadron Super Cool Komando Wilków Alfa",
     members: ["Robert Lewandowski", "Adam Małysz", "Robert Kubica"],
     description:
       "Szukamy czwartej osoby do projektu zespołowego. Apka mobilna. Więcej na priv.",
@@ -36,7 +36,7 @@ const GroupData = [
     subject: "Projekt zespołowy",
   },
   {
-    name: "Dupa-Grupa",
+    name: "Nazwa grupy",
     members: ["Robert Makłowicz"],
     description: "Cześć.",
     tags: ["tag", "czesc", ":)"],
