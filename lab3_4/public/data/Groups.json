@@ -1,0 +1,16 @@
+[{
+    "name": "Delta Szwadron Super Cool Komando Wilków Alfa",
+    "members": ["Robert Lewandowski", "Adam Małysz", "Robert Kubica"],
+    "description":
+      "Szukamy czwartej osoby do projektu zespołowego. Apka mobilna. Więcej na priv.",
+    "tags": ["React Native", "JavaScript", "HTML", ".NET", "Docker"],
+    "subject": "Projekt zespołowy"
+  },
+  {
+    "name": "Nazwa grupy",
+    "members": ["Robert Makłowicz"],
+    "description": "Cześć.",
+    "tags": ["tag", "czesc", ":)"],
+    "subject": "Przedmiot"
+  }
+]

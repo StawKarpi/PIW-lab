@@ -37,17 +37,19 @@ const AddGroupPage = () => {
   };
 
   const addNewGroup = () => {
-    const newGroup = {
-      name: name,
-      members: members,
-      emails: emails,
-      description: description,
-      subject: subject,
-      tags: tags,
-    };
+    if (name && members && emails && description && subject && tags) {
+      const newGroup = {
+        name: name,
+        members: members,
+        emails: emails,
+        description: description,
+        subject: subject,
+        tags: tags,
+      };
 
-    data.push(newGroup);
-    localStorage.setItem("groups", JSON.stringify(data));
+      data.push(newGroup);
+      localStorage.setItem("groups", JSON.stringify(data));
+    }
   };
 
   return (

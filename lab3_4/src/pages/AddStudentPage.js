@@ -32,16 +32,18 @@ const AddStudentPage = () => {
   };
 
   const addNewStudent = () => {
-    const newStudent = {
-      name: name,
-      email: email,
-      description: description,
-      subject: subject,
-      tags: tags,
-    };
-
-    data.push(newStudent);
-    localStorage.setItem("students", JSON.stringify(data));
+    if (name && email && description && subject && tags) {
+      const newStudent = {
+        name: name,
+        picture: "http://picsum.photos/70/100",
+        email: email,
+        description: description,
+        subject: subject,
+        tags: tags,
+      };
+      data.push(newStudent);
+      localStorage.setItem("students", JSON.stringify(data));
+    }
   };
 
   return (
