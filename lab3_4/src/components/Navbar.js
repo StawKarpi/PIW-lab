@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const dataLogged = JSON.parse(localStorage.getItem("loggedIn"));
@@ -20,39 +21,39 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
+            <NavLink to={"/"} className="nav-link">
               Studenci
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/addStudent">
+            <NavLink className="nav-link" to={"/addStudent"}>
               Dodaj studenta
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/groups">
+            <NavLink className="nav-link" to={"/groups"}>
               Grupy
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/addGroup">
+            <NavLink className="nav-link" to="/addGroup">
               Dodaj grupę
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/register">
+            <NavLink className="nav-link" to="/register">
               Zarejestruj
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
             {dataLogged !== null ? (
-              <a className="nav-link" href="/login">
+              <NavLink className="nav-link" to="/login">
                 Wyloguj
-              </a>
+              </NavLink>
             ) : (
-              <a className="nav-link" href="/login">
+              <NavLink className="nav-link" to="/login">
                 Zaloguj
-              </a>
+              </NavLink>
             )}
           </li>
         </ul>
