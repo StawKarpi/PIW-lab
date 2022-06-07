@@ -1,0 +1,10 @@
+[{
+    "userName": "student",
+    "password": "poziomd",
+    "email": "mail@email.mail"
+  },
+  {
+    "userName": "student2",
+    "password": "admin",
+    "email": "email@mail.email"
+  }]

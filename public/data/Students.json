@@ -1,0 +1,17 @@
+[{
+    "name": "Stu Dent",
+    "picture": "https://i.picsum.photos/id/796/70/100.jpg?hmac=Xw1L_Fj9y0jRl1lutX1S2-2qqqcgrn3alC2BWypNa0k",
+    "email": "mail@email.mail",
+    "description":
+      "Sympatyczny student drugiego roku szuka sympatycznego towarzysza lub towarzyszki do projektu z Baz Danych :-)",
+    "tags": ["SQL", "C#"],
+    "subject": "Bazy Danych 2"
+  },
+  {
+    "name": "W4ldemar",
+    "picture": "https://i.picsum.photos/id/281/70/100.jpg?hmac=4J_qMQ5fFT8UeLLQAGj2B3JHCSsqLVfEk6aiRdh1SF4",
+    "email": "e.mail@mail.e",
+    "description": "Zaliczam AK2 po raz czwarty, szukam kogoś do projektu",
+    "tags": ["assembler", "C"],
+    "subject": "Architektura Komputerów 2"
+  }]

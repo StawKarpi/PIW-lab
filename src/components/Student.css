@@ -1,0 +1,6 @@
+.profile-picture {
+    display: inline-flex;
+    border-radius: 3px;
+    float: left;
+    margin: 10px;
+}
