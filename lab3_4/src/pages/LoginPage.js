@@ -1,5 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 import UserContext from "../contexts/UserContext";
+import { auth } from "../firebase/init";
+import {logInWithEmailAndPassword, logInWithFacebook, logInWithGoogle, logout } from "../firebase/users";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [login, setLogin] = useState("");
@@ -8,10 +12,23 @@ const Login = () => {
 
   const [loggedIn, setLogged] = useState("");
 
+  const [user, loading, error] = useAuthState(auth);
+
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const dataUsers = JSON.parse(localStorage.getItem("users"));
   const dataLogged = JSON.parse(localStorage.getItem("loggedIn"));
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading)
+        return
+    if (user)
+        navigate("/login");
+    if(error)
+        console.error({error});
+    }, [user, loading]);
 
   //   useEffect(() => {
   //     if (dataLogged !== null) {
@@ -46,20 +63,21 @@ const Login = () => {
 
   return (
     <div>
-      {dataLogged !== null ? (
+      {(dataLogged !== null) || user && (
         <div>
           <h2>Jesteś zalogowany</h2>
           <button
-            onClick={() => {
-              setCurrentUser(null);
-              localStorage.setItem("loggedIn", null);
-              setLogged(null);
-            }}
+            onClick={// () => {
+              logout
+              // setCurrentUser(null);
+              // localStorage.setItem("loggedIn", null);
+              // setLogged(null);
+            } // }
           >
             Wyloguj
           </button>
         </div>
-      ) : (
+      ) || (
         <div>
           <label class="addLabel"> Nazwa użytkownika: </label>
           <input
@@ -68,7 +86,7 @@ const Login = () => {
             onChange={loginHandler}
           />
           <label class="addLabel"> Hasło: </label>
-          <input
+          <input type="password"
             placeholder={"Hasło"}
             className="addInput"
             onChange={passwordHandler}
@@ -85,6 +103,12 @@ const Login = () => {
           >
             Zaloguj
           </button>
+          <button class="addButton" onClick={logInWithGoogle}>
+            Login with Google
+        </button>
+        <button class="addButton" onClick={logInWithFacebook}>
+            Login with Facebook
+        </button>
         </div>
       )}
     </div>

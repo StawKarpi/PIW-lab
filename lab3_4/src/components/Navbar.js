@@ -1,8 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {useAuthState} from "react-firebase-hooks/auth";
+import {auth} from "../firebase/init";
 
 const Navbar = () => {
   const dataLogged = JSON.parse(localStorage.getItem("loggedIn"));
+
+  const [user] = useAuthState(auth);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,11 +50,11 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="nav-item">
-            {dataLogged !== null ? (
+            {(dataLogged !== null) || user && (
               <NavLink className="nav-link" to="/login">
-                Wyloguj
+                Wyloguj {user.displayName}
               </NavLink>
-            ) : (
+            ) || (
               <NavLink className="nav-link" to="/login">
                 Zaloguj
               </NavLink>
